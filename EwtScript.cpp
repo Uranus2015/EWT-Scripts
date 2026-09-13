@@ -1,7 +1,7 @@
 #include<iostream>
 #include<windows.h>
 #include <conio.h>
-//Ã»ÈËÓÃ£¬ÀÁµÃ¸øÐÂ¹¦ÄÜºÍÀÏ¹¦ÄÜÓÅ»¯ÁË
+//æ²¡äººç”¨ï¼Œæ‡’å¾—ç»™æ–°åŠŸèƒ½å’Œè€åŠŸèƒ½ä¼˜åŒ–äº†
 bool endf(COLORREF endx,COLORREF endy,COLORREF endz);
 int main()
 {   
@@ -13,31 +13,31 @@ int main()
         HDC Screen=GetDC(NULL);
         //int i=0;
         //std::cin>>i;
-        std::cout<<"ºÃµÄ£¬ÇëÏÈ°ÑÄãµÄÊó±ê·ÅÔÚÄãÒª²¥·ÅµÄµÚÒ»¸ö¿Î³ÌÉÏÃæ,È»ºó°´¼üÅÌ¶ÁÈ¡Êó±ê×ø±ê\n";
+        std::cout<<"å¥½çš„ï¼Œè¯·å…ˆæŠŠä½ çš„é¼ æ ‡æ”¾åœ¨ä½ è¦æ’­æ”¾çš„ç¬¬ä¸€ä¸ªè¯¾ç¨‹ä¸Šé¢,ç„¶åŽæŒ‰é”®ç›˜è¯»å–é¼ æ ‡åæ ‡\n";
         POINT pt;
         system("pause");
         GetCursorPos(&pt);
-        std::cout<<pt.x<<"\t"<<pt.y<<"\n";
+        std::cout<<"("<<pt.x<<"\t"<<pt.y<<") \n";
         Classx=pt.x;
         Classy=pt.y;
-        std::cout<<"²»ÓÃÔÚÒâÕâ¼¸¸öÖµ\nÏÖÔÚÊó±ê¿ÉÒÔÒÆ×ßÁË\n";
+        std::cout<<"è¿™ä¸ªæ˜¯ä½ åœ¨ç¬¬ä¸€ä¸ªè¯¾ç¨‹ä¸Šçš„é¼ æ ‡åæ ‡\nçŽ°åœ¨é¼ æ ‡å¯ä»¥ç§»èµ°äº†\n";
         double screenx=double(GetSystemMetrics(SM_CXSCREEN)/1920);
         double screeny=double(GetSystemMetrics(SM_CYSCREEN)/1080);
-        COLORREF Pause=GetPixel(Screen,692*screenx,641*screeny);//¼ì²â ÈÏÕæ¶È¼ì²â °´Å¥ÉÏµÄÀ¶É«
-        COLORREF End=GetPixel(Screen,480*screenx,575*screeny);//EWTÖ²ÎïÈËµÄÀ®°ÈÉÏµÄÉîÀ¶É«
-        COLORREF End1=GetPixel(Screen,1606*screenx,749*screeny);//EWTÖ²ÎïÈËµÄÃ±×ÓÉÏµÄ×ØÉ«
-        COLORREF End2=GetPixel(Screen,828*screenx,518*screeny);//ÐÄÀí¼ì²âµÄ»ÒÉ«
-        COLORREF class_=GetPixel(Screen,Classx,Classy);//¿Î³ÌÀ¶É«
+        COLORREF Pause=GetPixel(Screen,692*screenx,641*screeny);//æ£€æµ‹ è®¤çœŸåº¦æ£€æµ‹ æŒ‰é’®ä¸Šçš„è“è‰²
+        COLORREF End=GetPixel(Screen,480*screenx,575*screeny);//EWTæ¤ç‰©äººçš„å–‡å­ä¸Šçš„æ·±è“è‰²
+        COLORREF End1=GetPixel(Screen,1606*screenx,749*screeny);//EWTæ¤ç‰©äººçš„å¸½å­ä¸Šçš„æ£•è‰²
+        COLORREF End2=GetPixel(Screen,828*screenx,518*screeny);//å¿ƒç†æ£€æµ‹çš„ç°è‰²
+        COLORREF class_=GetPixel(Screen,Classx,Classy);//è¯¾ç¨‹è“è‰²
         while(class_==RGB(242,246,255)&&(Classy+84*screeny)<1034*screeny)
         {   
-            Pause=GetPixel(Screen,692*screenx,641*screeny);//¼ì²â ÈÏÕæ¶È¼ì²â °´Å¥ÉÏµÄÀ¶É«
-            End=GetPixel(Screen,480*screenx,574*screeny);//EWTÖ²ÎïÈËµÄÀ®°ÈÉÏµÄÉîÀ¶É«
-            End1=GetPixel(Screen,402*screenx,520*screeny);//EWTÖ²ÎïÈËµÄÃ±×ÓÉÏµÄ×ØÉ«
-            End2=GetPixel(Screen,828*screenx,518*screeny);//ÐÄÀí¼ì²âµÄ»ÒÉ«
+            Pause=GetPixel(Screen,692*screenx,641*screeny);//æ£€æµ‹ è®¤çœŸåº¦æ£€æµ‹ æŒ‰é’®ä¸Šçš„è“è‰²
+            End=GetPixel(Screen,480*screenx,574*screeny);//EWTæ¤ç‰©äººçš„å–‡å­ä¸Šçš„æ·±è“è‰²
+            End1=GetPixel(Screen,402*screenx,520*screeny);//EWTæ¤ç‰©äººçš„å¸½å­ä¸Šçš„æ£•è‰²
+            End2=GetPixel(Screen,828*screenx,518*screeny);//å¿ƒç†æ£€æµ‹çš„ç°è‰²
 
             if(endf(End,End1,End2))
             {
-                std::cout<<"±¾½Ú¿Î³ÌÒÑÍê³É\n";
+                std::cout<<"æœ¬èŠ‚è¯¾ç¨‹å·²å®Œæˆ\n";
                 SetCursorPos(Classx,Classy+84*screeny);
                 mouse_event(MOUSEEVENTF_LEFTDOWN|MOUSEEVENTF_LEFTUP,0,0,0,0);
                 Classy=Classy+84*screeny;
@@ -46,20 +46,20 @@ int main()
             }
             else if(Pause==RGB(46,134,255)||Pause==RGB(0,102,255))
             {
-                //ÒÆ¶¯Êó±ê
+                //ç§»åŠ¨é¼ æ ‡
                 SetCursorPos(692*screenx,641*screeny);
-                mouse_event(MOUSEEVENTF_LEFTDOWN|MOUSEEVENTF_LEFTUP,0,0,0,0);//µã»÷
-                std::cout<<"°ïÄãµãÍêÁË,ß÷ÎØ~\\(= ^¡¤ w ¡¤^)=";
+                mouse_event(MOUSEEVENTF_LEFTDOWN|MOUSEEVENTF_LEFTUP,0,0,0,0);//ç‚¹å‡»
+                std::cout<<"å¸®ä½ ç‚¹å®Œäº†,å–µå‘œ~\\(= ^Â· w Â·^)=";
             }
             Sleep(512);
         }
         std::cout<<"R: "<< (int)GetRValue(class_)
                 <<" G: "<< (int)GetGValue(class_)
                 <<" B: "<< (int)GetBValue(class_)
-                <<"\nµ±ÑÕÉ«=242,246,255Ê±ÅÐ¶¨»¹ÓÐ¿Î³ÌÎ´Íê³É\n"
+                <<"\nå½“é¢œè‰²=242,246,255æ—¶åˆ¤å®šè¿˜æœ‰è¯¾ç¨‹æœªå®Œæˆ\n"
                 <<(Classy+84*screeny)<<' '<<1034*screeny
-                <<" µ±Ç°Ò»¸öÖµ´óÓÚºóÒ»¸öÖµÊ±£¬ÅÐ¶¨±¾Ò³¿Î³ÌÒÑ¾­Íê³É\n";
-         //Á½¿Î³ÌÖ®¼äÏà²î84px
+                <<" å½“å‰ä¸€ä¸ªå€¼å¤§äºŽåŽä¸€ä¸ªå€¼æ—¶ï¼Œåˆ¤å®šæœ¬é¡µè¯¾ç¨‹å·²ç»å®Œæˆ\n";
+         //ä¸¤è¯¾ç¨‹ä¹‹é—´ç›¸å·®84px
         ReleaseDC(NULL,Screen);
         Beep(440,250);
         Beep(659,250);
@@ -72,8 +72,8 @@ int main()
         Beep(523,250);
         Beep(494,250);
         Beep(440,400);
-        std::cout<<"´ËÒ³¿Î³ÌÒÑ¾­²¥·ÅÍê±Ï£¬ÇëÏÂ»¬Êó±ê»òÕß¸ü»»ÏÂÒ»ÌìµÄ¿Î³Ì\n";
-        std::cout<<"°´ÈÎÒâ¼üÍË³ö³ÌÐò£¬·ñÔò½«ÔÚ10Ãëºó¼ÌÐø";
+        std::cout<<"æ­¤é¡µè¯¾ç¨‹å·²ç»æ’­æ”¾å®Œæ¯•ï¼Œè¯·ä¸‹æ»‘é¼ æ ‡æˆ–è€…æ›´æ¢ä¸‹ä¸€å¤©çš„è¯¾ç¨‹\n";
+        std::cout<<"æŒ‰ä»»æ„é”®é€€å‡ºç¨‹åºï¼Œå¦åˆ™å°†åœ¨10ç§’åŽç»§ç»­";
         for(int i=0;i<10;i++)
         {
             if(_kbhit())
